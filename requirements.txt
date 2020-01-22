@@ -1,0 +1,14 @@
+Flask==1.1.1
+Flask-Bcrypt==0.7.1
+Flask-Cors==3.0.8
+Flask-JWT-Extended==3.24.1
+Flask-Login==0.4.0
+Flask-PyMongo==2.3.0
+Flask-WTF==0.14.2
+get==2019.4.13
+pymongo==3.7.2
+request==2019.4.13
+requests==2.22.0
+WTForms==2.2.1
+json5==0.8.5
+jsonschema==3.0.2

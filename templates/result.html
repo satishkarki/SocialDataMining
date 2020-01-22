@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block result %}
+
+	<div class="container" id="test">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>ISO</th>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                    <th>Type</th>
+                    <th>Locations</th>
+
+                </tr>
+            </thead>
+            <tbody id="body">
+                {% for i in holiday_list%}
+                <tr>
+                    <td>{{ i["name"] }}</td>
+                    <td>{{ i["description"] }}</td>
+                    <td>{{ i["date"]["iso"] }}</td>
+                    <td>{{ i["date"]["datetime"]["year"] }}</td>
+                    <td>{{ i["date"]["datetime"]["month"] }}</td>
+                    <td>{{ i["date"]["datetime"]["day"] }}</td>
+                    <td>{{ i["type"][0] }}</td>
+                    <td>{{ i["locations"] }}</td>
+                    <td class="show-btn hidden"><a id="update-form-ajax" href="{{url_for('updateform',id=i['_id'])}}">
+                    	<button type="button" class="btn btn-success">Update</button></a>
+                    </td>
+					<td class="show-delete-btn hidden"><a id="delete-ajax" href="{{url_for('delete',id=i['_id'])}}">
+						<button type="button" class="btn btn-danger">Delete</button></a>
+					</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{%endblock%}
